@@ -7,7 +7,7 @@ from prompt.userPrompt import UserPrompt
 from app.app import App
 
 def main():    
-    argsClass = DefaultArgs(["--prompt", "a giraffe without a neck"])
+    argsClass = DefaultArgs()
     args = argsClass.get_args()
 
     customPrompt = args["prompt"]
