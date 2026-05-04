@@ -12,7 +12,7 @@ def main():
 
     customPrompt = args["prompt"]
 
-    envManager = DefaultEnvManager()
+    envManager = DefaultEnvManager(args)
 
     downloader = FilesDownloader()
     generator = GeminiGenerator(envManager)
