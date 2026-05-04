@@ -32,3 +32,11 @@ class DefaultEnvManager(EnvManager):
             raise ValueError("FAL_MODEL is not set")
 
         return result
+
+    def get_gemini_api_key(self) -> str:
+        result = os.getenv("GEMINI_API_KEY")
+
+        if not result:
+            raise ValueError("GEMINI_API_KEY is not set")
+
+        return result

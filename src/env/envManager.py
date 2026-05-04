@@ -13,3 +13,7 @@ class EnvManager(ABC):
     def get_fal_model(self) -> str:
         pass
 
+    @abstractmethod
+    def get_gemini_api_key(self) -> str:
+        pass
+

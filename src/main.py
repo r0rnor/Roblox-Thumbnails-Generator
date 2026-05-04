@@ -1,4 +1,4 @@
-from ai.fluxGenerator import FluxGenerator
+from ai.geminiGenerator import GeminiGenerator
 from args.defaultArgs import DefaultArgs
 from downloader.filesDownloader import FilesDownloader
 from env.defaultEnvManager import DefaultEnvManager
@@ -7,7 +7,7 @@ from prompt.userPrompt import UserPrompt
 from app.app import App
 
 def main():    
-    argsClass = DefaultArgs()
+    argsClass = DefaultArgs(["--prompt", "a giraffe without a neck"])
     args = argsClass.get_args()
 
     customPrompt = args["prompt"]
@@ -15,7 +15,7 @@ def main():
     envManager = DefaultEnvManager()
 
     downloader = FilesDownloader()
-    generator = FluxGenerator(envManager)
+    generator = GeminiGenerator(envManager)
     promptDecorator = UserPrompt(customPrompt)
     
     app = App({
